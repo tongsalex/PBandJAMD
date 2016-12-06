@@ -438,6 +438,7 @@ class App extends Component {
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}
         </div>
+
         <Footer />
       </div>
     );

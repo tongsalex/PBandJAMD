@@ -1,11 +1,69 @@
 #AsideLoginSignupContainer {
-  z-index: 5;
+  z-index: 1;
   display: flex;
   align-items: center;
   height: 100%;
   position: absolute;
-  transform: rotate(0deg);
   width: auto;
   right: 0;
   top: 0;
 }
+
+#hidden {
+  background: linear-gradient(236deg, #E01A4F, #F9C22E);
+  background-size: 400% 400%;
+  animation: gradientAnimation 25s ease infinite;
+
+  width: 0vw;
+  height: 100%;
+  transition: width 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#show {
+  background: linear-gradient(236deg, #E01A4F, #F9C22E);
+  background-size: 400% 400%;
+  animation: gradientAnimation 25s ease infinite;
+
+  width: 90vw;
+  height: 100%;
+  transition: width 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@keyframes gradientAnimation {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+
+/*F15946
+53B3CB
+0C090D
+218380
+
+8F2D56
+73D2DE
+*/
+
+#sidebarButton {
+  background-color: #F15946;
+  height: 100%;
+  width: 10vw;
+  opacity: 1;
+}
+
+#sidebarButton:hover {
+  animation: bounce .3s infinite alternate;
+}
+
+@keyframes bounce {
+  to { transform: scale(1.2); }
+}
+

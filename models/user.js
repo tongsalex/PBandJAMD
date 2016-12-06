@@ -6,8 +6,6 @@ const db = require('../lib/dbConnect.js');
 function createUser(req, res, next) { // makes a new user upon signup page
   const userObject = {
     username: req.body.username,
-
-    // Store hashed password
     password: req.body.password,
   };
 
@@ -28,25 +26,6 @@ function listUsers(req, res, next) {
       next(error);
     });
 }
-
-// function getUserById(id) {
-//   return (db) => {
-
-//     const promise = new Promise((resolve, reject) => {
-
-
-//       db.collection('users')
-//         .findOne({ _id: ObjectID(id) }, (findError, user) => {
-//           if (findError) reject(findError);
-//           db.close();
-//           resolve(user);
-//         });
-//     });
-
-
-//     return promise;
-//   };
-// }
 
 function getUserByUsername(username) {
   return db.one('SELECT * FROM users WHERE username = $1', [username]);
@@ -70,7 +49,6 @@ function getUserInfo(req, res, next) {
 module.exports = {
   createUser,
   listUsers,
-  // getUserById,
   getUserInfo,
   getUserByUsername,
 };
